@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "electron": "^2.0.5"
+  },
+  "name": "lupin-coin-wallet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lupin204/lupin-coin-wallet.git",
+  "author": "Lee Young Seo <lupin204@gmail.com>",
+  "license": "MIT"
+}
