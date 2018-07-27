@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "electron main.js"
+    "start": "concurrently --kill-others \" yarn run startReact \" \"cross-env ENV=dev electron .\"",
+    "startReact": "cd uidev && npm start"
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
@@ -8,8 +9,11 @@
   },
   "name": "lupin-coin-wallet",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "repository": "https://github.com/lupin204/lupin-coin-wallet.git",
   "author": "Lee Young Seo <lupin204@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^5.2.0"
+  }
 }
