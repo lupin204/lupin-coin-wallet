@@ -1,12 +1,20 @@
 const electron = require("electron"),
     path = require("path"),
-    url = require("url");
+    url = require("url"),
+    lupincoin = require('./lupin-coin/src/server');
 
 /*
 const app = electron.app;                           // node.js의 express app 같은 초기화.
 const BrowserWindow = electron.BrowserWindow;       // <브라우저 window> 타입 설정 = BrowserWindow:웹사이트처럼보임
 */
 const { app, BrowserWindow } = electron;
+
+// start lupin-coin express server.
+const server = lupincoin.app.listen(4000, () => {
+    console.log('running localhost:4000');
+});
+
+lupincoin.startP2PServer(server);
 
 let mainWindow;
 
