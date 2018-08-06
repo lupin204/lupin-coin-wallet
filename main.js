@@ -1,20 +1,28 @@
 const electron = require("electron"),
     path = require("path"),
     url = require("url"),
+    getPort = require("get-port"),
     lupincoin = require('./lupin-coin/src/server');
+
+
+    getPort().then(port => {
+        // start lupin-coin express server.
+        const server = lupincoin.app.listen(port, () => {
+            console.log(`Running blockchain node on: http://localhost:${port}`);
+        });
+
+        lupincoin.startP2PServer(server);
+
+        // --> electron에서 node.js 's global 변수에 저장 --> remote.getGlobal("sharedPort") 로 sharedPort 변수를 가져와서 --> React에서 사용.
+        // --> node.js 글로벌 변수에 저장하여, electron / node.js / react 3군데서 모두 사용 가능한 변수로 만들었음!!
+        global.sharedPort = port;
+    })
 
 /*
 const app = electron.app;                           // node.js의 express app 같은 초기화.
 const BrowserWindow = electron.BrowserWindow;       // <브라우저 window> 타입 설정 = BrowserWindow:웹사이트처럼보임
 */
 const { app, BrowserWindow } = electron;
-
-// start lupin-coin express server.
-const server = lupincoin.app.listen(4000, () => {
-    console.log('running localhost:4000');
-});
-
-lupincoin.startP2PServer(server);
 
 let mainWindow;
 

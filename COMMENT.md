@@ -22,5 +22,7 @@
   - concurrently
     - 여러개의 프로세스를 한번에 하게 해주는 module
     - 여기서는 ReactJS(create-react-app) & Electron() 환경설정을 동시에 함.
+  - get-port
+    - port 잡는 것을 도와주는 lib.
 
 

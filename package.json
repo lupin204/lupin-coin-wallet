@@ -14,6 +14,7 @@
   "author": "Lee Young Seo <lupin204@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cross-env": "^5.2.0"
+    "cross-env": "^5.2.0",
+    "get-port": "^4.0.0"
   }
 }
