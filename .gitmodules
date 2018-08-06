@@ -1,0 +1,3 @@
+[submodule "lupin-coin"]
+	path = lupin-coin
+	url = https://github.com/lupin204/lupin-coin.git
