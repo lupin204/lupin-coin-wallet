@@ -1,0 +1,26 @@
+{
+  "name": "lupin-coin",
+  "version": "1.0.0",
+  "description": "Crypto-currency - coin with Node.js",
+  "main": "src/server.js",
+  "repository": "https://github.com/lupin204/lupin-coin.git",
+  "author": "Lee Young Seo <lupin204@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "crypto-js": "^3.1.9-1",
+    "crypto.js": "^1.1.0",
+    "elliptic": "^6.4.0",
+    "express": "^4.16.3",
+    "hex-to-binary": "^1.0.1",
+    "lodash": "^4.17.10",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5",
+    "ws": "^5.2.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  }
+}
