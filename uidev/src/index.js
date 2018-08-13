@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "Components/App";
+const { remote } = window.require("electron");
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const sharedPort = remote.getGlobal("sharedPort");
+
+ReactDOM.render(
+  <App sharedPort={sharedPort} />,
+  document.getElementById("root")
+);
